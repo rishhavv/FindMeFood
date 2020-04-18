@@ -3,11 +3,19 @@ import { StyleSheet ,View} from 'react-native';
 import {EvilIcons} from '@expo/vector-icons'
 import { TextInput } from 'react-native-gesture-handler';
 
-const SearchBar = ()=>{
+const SearchBar = ({restaurant, onRestChange, onTermSubmit})=>{
     return( 
         <View style={styles.searchBar}>
             <EvilIcons name="search" style={styles.icon} size={45}/>
-           <TextInput  placeholder="Search" style={styles.Input}/>
+           <TextInput 
+           autoCapitalize='none'
+           autoCorrect={false}
+           placeholder="Search" style={styles.Input}
+           value={restaurant}
+           onChangeText={(query)=>onRestChange(query)}
+           onEndEditing={()=>onTermSubmit()}
+           
+           />
            
           
     </View>
