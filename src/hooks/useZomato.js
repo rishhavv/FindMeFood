@@ -10,16 +10,23 @@ const [errorMessage, setError] = useState('');
 const searchResult = async (something) =>{
    try {const wapis = await zomato.get('/search',{
         params:{
-            entity_id:2,
-            entity_type:'landmark',
-            q:something,
-            count:10,
-            lat:28.704060,
-            lon:77.102493,
-            radius:10000,
+            //entity_id:1,
+            entity_type:'zone',
+            q:'',
+            count:50,
+            lat:28.4952,
+            lon:77.08913,
+            radius:1000,
+            sort:'cost',
+            order:'asc'
             
         }
     });
+    let ln = wapis.data.restaurants.length;
+    // for(let i ; i< ln ; i++ ){
+    //     console.log(wapis.data.restaurants[i][restaurant][price_range]) 
+    // }
+       
 
     setFindings(wapis.data.restaurants)
 } catch(err){

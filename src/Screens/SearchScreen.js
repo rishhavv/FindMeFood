@@ -7,13 +7,31 @@ import useZomato from '../hooks/useZomato'
 
 
 
-
-
 const SearchScreen = ()=>{
     
  
 const [restaurant,changeRestaurant] = useState('');
 const [searchResult,finding,errorMessage] = useZomato();
+
+const priceFilter = (up,low) =>  {  // return( finding.filter(finding =>{
+    //     return(low<=finding.price_range<up)
+    //let abc = finding;
+        
+            
+                for (const [key, value] of Object.entries(finding)) {
+                   return console.log(key, value);
+                  }
+            
+        
+    
+       
+        
+    }
+ 
+ 
+
+
+
 
 
     return (
@@ -29,9 +47,9 @@ const [searchResult,finding,errorMessage] = useZomato();
     <Text>{restaurant.length}</Text>
     {errorMessage ? <Text>{errorMessage}</Text>: null }
     <Text>{finding.length}</Text>
-    <ResultShow title='sex'/>
-    <ResultShow title='sexsd'/>
-    <ResultShow title='sex3'/>
+    <ResultShow results={priceFilter(1,4)} title='abcd'/>
+    {/* <ResultShow results={priceFilter(4,8)} title='sexsd'/>
+    <ResultShow results={priceFilter(8,11)} title='sex3'/> */}
 
 
         
