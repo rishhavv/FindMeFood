@@ -1,6 +1,8 @@
 import React from 'react';
 import {Text,View, StyleSheet} from 'react-native'
 import { FlatList } from 'react-native-gesture-handler';
+import DetailShow from '../Components/DetailShow'
+
 
 const ResultShow = ({title, results}) =>{
     return (
@@ -9,7 +11,10 @@ const ResultShow = ({title, results}) =>{
     <Text>result:{results.length}</Text>
     <FlatList horizontal data={results} keyExtractor={(results)=> results.id} 
     renderItem={({item})=>{
-    return <Text>{item.name}  </Text>
+    return (<View>
+        <DetailShow name={item.name} image_url={item.thumb}/>
+        </View>
+        )
     }} />
     </View>
     )

@@ -47,9 +47,9 @@ const priceFilter = (low,up) =>  {
     <Text>{restaurant.length}</Text>
     {errorMessage ? <Text>{errorMessage}</Text>: null }
     <Text>{finding.length}</Text>
-    <ResultShow results={priceFilter(1,2)} title='abcd'/>
-    <ResultShow results={priceFilter(3,3)} title='sexsd'/>
-    <ResultShow results={priceFilter(4,5)} title='sex3'/>
+    <ResultShow results={priceFilter(1,1)} title='abcd'/>
+    <ResultShow results={priceFilter(2,2)} title='sexsd'/>
+    <ResultShow results={priceFilter(3,5)} title='sex3'/>
 
 
         

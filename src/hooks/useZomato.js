@@ -19,10 +19,10 @@ const searchResult = async (something) =>{
             count:50,
             lat:28.4952,
             lon:77.08913,
-            radius:1000,
+            radius:10000,
             start:i,
-            sort:'real_distance',
-            order:'asc'
+            sort:'rating',
+            order:'desc'
             
         }
     });
