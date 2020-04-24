@@ -13,14 +13,19 @@ const SearchScreen = ()=>{
 const [restaurant,changeRestaurant] = useState('');
 const [searchResult,finding,errorMessage] = useZomato();
 
-const priceFilter = (up,low) =>  {  // return( finding.filter(finding =>{
-    //     return(low<=finding.price_range<up)
-    //let abc = finding;
-        
+const priceFilter = (low,up) =>  {  
+        let filterResults =[];
             
-                for (const [key, value] of Object.entries(finding)) {
-                   return console.log(key, value);
+             for (const [key, value] of Object.entries(finding)) {
+                
+                  if(value.restaurant.price_range>=low)
+                  {
+                      if(value.restaurant.price_range<=up)
+                    {filterResults.push(value.restaurant.price_range);}
                   }
+                  }
+                  console.log(filterResults);
+                  return filterResults;
             
         
     
@@ -28,11 +33,6 @@ const priceFilter = (up,low) =>  {  // return( finding.filter(finding =>{
         
     }
  
- 
-
-
-
-
 
     return (
         <View>
@@ -47,9 +47,9 @@ const priceFilter = (up,low) =>  {  // return( finding.filter(finding =>{
     <Text>{restaurant.length}</Text>
     {errorMessage ? <Text>{errorMessage}</Text>: null }
     <Text>{finding.length}</Text>
-    <ResultShow results={priceFilter(1,4)} title='abcd'/>
-    {/* <ResultShow results={priceFilter(4,8)} title='sexsd'/>
-    <ResultShow results={priceFilter(8,11)} title='sex3'/> */}
+    <ResultShow results={priceFilter(1,2)} title='abcd'/>
+    <ResultShow results={priceFilter(3,3)} title='sexsd'/>
+    <ResultShow results={priceFilter(4,5)} title='sex3'/>
 
 
         

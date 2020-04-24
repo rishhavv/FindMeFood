@@ -17,7 +17,7 @@ const searchResult = async (something) =>{
             lat:28.4952,
             lon:77.08913,
             radius:1000,
-            sort:'cost',
+            sort:'real_distance',
             order:'asc'
             
         }
