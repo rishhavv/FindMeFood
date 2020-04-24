@@ -21,7 +21,7 @@ const priceFilter = (low,up) =>  {
                   if(value.restaurant.price_range>=low)
                   {
                       if(value.restaurant.price_range<=up)
-                    {filterResults.push(value.restaurant.price_range);}
+                    {filterResults.push(value.restaurant);}
                   }
                   }
                   console.log(filterResults);
