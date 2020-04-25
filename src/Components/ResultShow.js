@@ -1,10 +1,14 @@
 import React from 'react';
-import {Text,View, StyleSheet} from 'react-native'
+import {Text,View, StyleSheet, TouchableOpacity} from 'react-native'
 import { FlatList } from 'react-native-gesture-handler';
 import DetailShow from '../Components/DetailShow'
+//import {withNavigation} from 'react-navigation';
+import { useNavigation } from '@react-navigation/native';
+
 
 
 const ResultShow = ({title, results}) =>{
+    const navigation = useNavigation();
     return (
     <View>
     <Text style={styles.title}>{title}</Text>
@@ -15,9 +19,9 @@ const ResultShow = ({title, results}) =>{
     horizontal 
     data={results} keyExtractor={(results)=> results.id} 
     renderItem={({item})=>{
-    return (<View>
+    return (<TouchableOpacity onPress={()=>navigation.navigate("ResultScreen",{id: item.id})}>
         <DetailShow name={item.name} image_url={item.thumb} costFTwo={item.average_cost_for_two} ratings={item.user_rating.aggregate_rating}/>
-        </View>
+        </TouchableOpacity>
         )
     }} />
     </View>
