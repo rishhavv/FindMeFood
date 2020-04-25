@@ -10,7 +10,7 @@ const [errorMessage, setError] = useState('');
 const searchResult = async (something) =>{
     let i=0;
     const restaurantData =[];
-  for(i=0;i<100;i=i+20){
+  for(i=0;i<10;i=i+20){
     try {const wapis = await zomato.get('/search',{
         params:{
             //entity_id:1,

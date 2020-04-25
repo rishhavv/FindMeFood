@@ -9,10 +9,14 @@ const ResultShow = ({title, results}) =>{
     <View>
     <Text style={styles.title}>{title}</Text>
     <Text>result:{results.length}</Text>
-    <FlatList horizontal data={results} keyExtractor={(results)=> results.id} 
+    <FlatList 
+    showsHorizontalScrollIndicator={false}
+    scrollEnabled
+    horizontal 
+    data={results} keyExtractor={(results)=> results.id} 
     renderItem={({item})=>{
     return (<View>
-        <DetailShow name={item.name} image_url={item.thumb}/>
+        <DetailShow name={item.name} image_url={item.thumb} costFTwo={item.average_cost_for_two} ratings={item.user_rating.aggregate_rating}/>
         </View>
         )
     }} />
@@ -23,7 +27,8 @@ const ResultShow = ({title, results}) =>{
 const styles = StyleSheet.create({
     title:{
         fontSize:30,
-        fontWeight:"bold"
+        fontWeight:"bold",
+        fontFamily:'Roboto'
     }
     });
 

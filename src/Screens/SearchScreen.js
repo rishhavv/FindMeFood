@@ -1,5 +1,5 @@
 import React from 'react';
-import {Text, StyleSheet, View, Button} from 'react-native';
+import {Text, StyleSheet, View, ScrollView} from 'react-native';
 import SearchBar from '../Components/SearchBar'
 import { useState } from 'react';
 import ResultShow from '../Components/ResultShow'
@@ -35,25 +35,26 @@ const priceFilter = (low,up) =>  {
  
 
     return (
-        <View>
+        <>
             <SearchBar 
             restaurant={restaurant} 
             onRestChange={(props)=> changeRestaurant(props)}
             onTermSubmit={()=>searchResult(restaurant)}
             />
-        <Text style={styles.searchBar}>Hello</Text>
+        {/* <Text style={styles.searchBar}>Hello</Text> */}
     <Text>{restaurant}</Text>
-    <Button title="abcd" onPress={async ()=>console.log(finding)} />
-    <Text>{restaurant.length}</Text>
+    {/* <Button title="abcd" onPress={async ()=>console.log(finding)} /> */}
+    {/* <Text>{restaurant.length}</Text>
     {errorMessage ? <Text>{errorMessage}</Text>: null }
-    <Text>{finding.length}</Text>
-    <ResultShow results={priceFilter(1,1)} title='abcd'/>
-    <ResultShow results={priceFilter(2,2)} title='sexsd'/>
-    <ResultShow results={priceFilter(3,5)} title='sex3'/>
-
+    <Text>{finding.length}</Text> */}
+    <ScrollView style={{marginLeft:10}}>
+    <ResultShow results={priceFilter(1,1)} title='Super Saver'/>
+    <ResultShow results={priceFilter(2,2)} title='Mid month'/>
+    <ResultShow results={priceFilter(3,5)} title='Big Spending'/>
+    </ScrollView>
 
         
-        </View>
+        </>
     )
 }
 
