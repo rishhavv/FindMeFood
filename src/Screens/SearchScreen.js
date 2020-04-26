@@ -41,15 +41,9 @@ const priceFilter = (low,up) =>  {
             onRestChange={(props)=> changeRestaurant(props)}
             onTermSubmit={()=>searchResult(restaurant)}
             />
-        {/* <Text style={styles.searchBar}>Hello</Text> */}
-    <Text>{restaurant}</Text>
-    {/* <Button title="abcd" onPress={async ()=>console.log(finding)} /> */}
-    {/* <Text>{restaurant.length}</Text>
-    {errorMessage ? <Text>{errorMessage}</Text>: null }
-    <Text>{finding.length}</Text> */}
     <ScrollView style={{marginLeft:10}}>
-    <ResultShow results={priceFilter(1,1)} title='Super Saver'/>
-    <ResultShow results={priceFilter(2,2)} title='Mid month'/>
+    <ResultShow results={priceFilter(1,1)} title='Super saver'/>
+    <ResultShow results={priceFilter(2,2)} title='Mid Month'/>
     <ResultShow results={priceFilter(3,5)} title='Big Spending'/>
     </ScrollView>
 
@@ -64,3 +58,12 @@ const styles = StyleSheet.create({
 
 
 export default SearchScreen;    
+
+
+
+
+
+    {/* <Button title="abcd" onPress={async ()=>console.log(finding)} /> */}
+    {/* <Text>{restaurant.length}</Text>
+    {errorMessage ? <Text>{errorMessage}</Text>: null }
+    <Text>{finding.length}</Text> */}

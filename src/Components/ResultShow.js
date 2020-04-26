@@ -2,7 +2,6 @@ import React from 'react';
 import {Text,View, StyleSheet, TouchableOpacity} from 'react-native'
 import { FlatList } from 'react-native-gesture-handler';
 import DetailShow from '../Components/DetailShow'
-//import {withNavigation} from 'react-navigation';
 import { useNavigation } from '@react-navigation/native';
 
 
@@ -12,7 +11,7 @@ const ResultShow = ({title, results}) =>{
     return (
     <View>
     <Text style={styles.title}>{title}</Text>
-    <Text>result:{results.length}</Text>
+   
     <FlatList 
     showsHorizontalScrollIndicator={false}
     scrollEnabled

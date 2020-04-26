@@ -15,7 +15,7 @@ const searchResult = async (something) =>{
         params:{
             //entity_id:1,
             entity_type:'zone',
-            q:'',
+            q:something,
             count:50,
             lat:28.4952,
             lon:77.08913,
@@ -47,7 +47,7 @@ const searchResult = async (something) =>{
     
 }
 useEffect(() =>{
-    searchResult('samomsa');},[]);
+    searchResult('');},[]);
 
 
     return [searchResult,finding,errorMessage]
